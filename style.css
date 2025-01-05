@@ -1,0 +1,548 @@
+/* Sayfanın tamamına uygulanacak stil */
+body {
+    margin: 0;
+    user-select: none;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #82ff97; /* Arka plan rengi */
+    background-image: 
+    linear-gradient(gray 1px, transparent 1px),  /* Yatay çizgiler */
+    linear-gradient(90deg, gray 1px, transparent 1px); /* Dikey çizgiler */
+    background-size: 15px 15px; /* Çizgilerin aralığı 15px */
+}
+
+
+#menu  {
+    transition: opacity 2s; /* Opaklığın yavaşça sıfıra inmesi için geçiş süresi */
+    display: flex;
+    z-index: 2;
+}
+
+#playbutton {
+    background-color: transparent;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    padding: 0;
+    width: 100px;
+    height: 120px;
+    background-image: url(playbuton.png);
+    margin-left: -75px;
+    margin-top: -105px;
+    transition: transform 0.5s;
+    position: absolute;
+}
+
+#settingbutton {
+    background-color: transparent;
+    user-select: none;
+    background-size: cover;
+    border: none;
+    object-fit: cover;
+    cursor: not-allowed;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    background-image: url(setting.png);
+    margin-top: 20px;
+    margin-left: -5px;
+    transition: transform 0.5s;
+    opacity: 0.5;
+    position: absolute;
+
+}
+
+#playbutton:hover {
+    transform: scale(1.1);
+}
+
+#playandsetting {
+    margin-left: -115px;
+    clip-path: polygon(76% 0, 100% 24%, 16% 100%, 0 75%);
+    margin-top: -65px;
+    height: 150px;
+    width: auto;
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+
+}
+
+#oyunad {
+    font-family: "Playwrite GB S";
+    font-size: 50px;
+    text-align: center; 
+    position: absolute;
+    top: -25px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    pointer-events: none;
+    user-select: none;
+}
+
+#musicButton {
+    position: fixed; /* Sabit pozisyon */
+    user-select: none;
+    top: 20px; /* Yukarıdan 20px */
+    right: 20px; /* Sağdan 20px */
+    width: 50px; /* Butonun genişliği */
+    height: 50px; /* Butonun yüksekliği */
+    background-color: #4CAF50; /* Butonun arka plan rengi */
+    border: none; /* Kenarlık yok */
+    border-radius: 50%; /* Yuvarlak buton */
+    color: white; /* Yazı rengi */
+    font-size: 24px; /* Yazı boyutu */
+    cursor: pointer; /* Tıklanabilir el işareti */
+    display: flex; /* Flex kullan */
+    align-items: center; /* Dikey ortalama */
+    justify-content: center; /* Yatay ortalama */
+    z-index: 1000; /* Üst katmanda görünür */
+    border:2px solid black;
+}
+
+/* Butona hover yaptığında biraz opaklık ekleyelim */
+#musicButton:hover {
+    opacity: 0.8;
+}
+
+/* Başlangıçta ve müzik durduğunda çizginin görünmesi */
+#musicIcon.line-through::after {
+    content: "";
+    position: absolute;
+    width: 40px; /* Çizginin genişliği */
+    height: 3px; /* Çizginin kalınlığı */
+    background-color: red; /* Çizginin rengi */
+    top: 50%; /* Butonun ortasına konumlandır */
+    left: 5px; /* Butonun solundan biraz daha boşluk bırak */
+    transform: rotate(-45deg); /* Çizgiyi çapraz yap */
+}
+
+#by {
+    text-align: center; /* Tüm metni ortala */
+    font-size: 24px; /* Yazı boyutu isteğe bağlı */
+    margin: 0;
+    line-height: 1.2;
+    transform: rotate(-25deg);
+    display: inline-block; 
+    position: absolute;
+    top: 7px;
+    left: 6px;
+    font-size: 16px;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.5;
+}
+
+#chatgpt {
+    background-color: white;
+    background-image: url(chatgptlogo.webp);
+    border-radius: 50%;
+    background-size: cover;
+    user-select: none;
+    border: none;
+    transition: transform 0.5s;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+#chatgpt:hover {
+    transform: scale(1.1);
+}
+
+#instagram {
+    background-color: #ffffff;
+    background-image: url(instagram1.png);
+    border-radius: 50%;
+    user-select: none;
+    background-size: cover;
+    border: none;
+    transition: transform 0.5s;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#instagram:hover {
+    transform: scale(1.1);
+}
+
+#tiktok {
+    background-color: white;
+    background-image: url(tiktok.png);
+    border-radius: 50%;
+    background-size: cover;
+    user-select: none;
+    border: none;
+    transition: transform 0.5s;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 20px;
+    right: 70px;
+    cursor: pointer;
+}
+
+#tiktok:hover {
+    transform: scale(1.1);
+}
+
+#tiktok2 {
+    background-color: white;
+    background-image: url(tiktok.png);
+    border-radius: 50%;
+    background-size: cover;
+    user-select: none;
+    border: none;
+    transition: transform 0.5s;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 20px;
+    right: 120px;
+    cursor: pointer;
+}
+
+#tiktok2:hover {
+    transform: scale(1.1);
+}
+
+.red-x {
+    position: absolute;
+    margin-top: -56px; /* Yüksekliği ayarla */
+    margin-left: -32px; /* Sağ kenara yerleştir */
+    font-size: 80px; /* X'in boyutunu ayarla */
+    color: red; /* Renk kırmızı */
+    pointer-events: none;
+    user-select: none;
+}
+#start {
+    display: none;
+    transition: opacity 2s ease;
+    opacity: 0;
+    z-index: 1;
+
+
+}
+
+#back1 {
+    background-color: white;
+    background-image: url(backbutton.png);
+    background-position-x: center;
+    background-position-y:center ;
+    border-radius: 10px;
+    background-size: 75px;
+    transition: transform 0.5s;
+    width: 75px;
+    height: 35px;
+    position:absolute;
+    top: 20px;
+    user-select: none;
+    left: 20px;
+    cursor: pointer;
+    border:2px solid black;
+}
+
+#back1:hover {
+    opacity: 0.8;
+}
+
+#toplama {
+    background-image: url(toplama.jpg);
+    background-color: transparent;
+    background-size: 55px;
+    border-radius: 50%;
+    background-position-x: center;
+    background-position-y:center ;
+    width: 60px;
+    height: 60px;
+    user-select: none;
+    font-size: 35px;
+    transition: transform 0.5s;
+    cursor: pointer;
+    position: absolute;
+    margin-left: -125px;
+    margin-top: -200px;
+    border:2px solid black;
+   
+    
+  
+}
+#cixma {
+    background-color: transparent;
+    background-image: url(cixma.jpg);
+    background-size: 60px;
+    background-position-x: left;
+    background-position-y:center ;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 35px;
+    user-select: none;
+    transition: transform 0.5s;
+    cursor: pointer;
+    position: absolute;
+    margin-left: -25px;
+    margin-top: -200px;
+    border:2px solid black;
+
+
+}
+#vurma {
+    background-color: transparent;
+    background-image: url(vurma.jpg);
+    background-position-x: center;
+    background-position-y:center ;
+    background-size: 50px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 35px;
+    user-select: none;
+    transition: transform 0.5s;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 75px;
+    margin-top: -200px;
+    border:2px solid black;
+}
+#bolme {
+    background-image: url(bolme.jpg);
+    background-color: transparent;
+    background-size: 57px;
+    border-radius: 50%;
+    background-position-x: center;
+    background-position-y:center ;
+    width: 60px;
+    height: 60px;
+    user-select: none;
+    font-size: 35px;
+    transition: transform 0.5s;
+    cursor: pointer;
+    position: absolute;
+    margin-left: -125px;
+    margin-top: -115px;
+    border:2px solid black;
+   
+    
+  
+}
+#topcixbolvur {
+    background-image: url(toplama\ cixma\ vurma\ bolme.jpg);
+    background-color: transparent;
+    background-size: 57px;
+    border-radius: 50%;
+    background-position-x: center;
+    background-position-y:center ;
+    width: 60px;
+    height: 60px;
+    user-select: none;
+    font-size: 25px;
+    transition: transform 0.5s;
+    cursor: pointer;
+    position: absolute;
+    margin-left: -25px;
+    margin-top: -115px;
+    border:2px solid black;
+}
+
+#kesr {
+    background-image: url(kesr.jpg);
+    background-color: transparent;
+    background-size: 85px;
+    border-radius: 50%;
+    background-position-x: center ;
+    background-position-y:center ;
+    width: 60px;
+    height: 60px;
+    font-size: 55px;
+    transition: transform 0.5s;
+    cursor: pointer;
+    position: absolute;
+    user-select: none;
+    margin-left: 75px;
+    margin-top: -115px;
+    border:2px solid black;
+}
+#find {
+    background-color: white;
+    background-size: 10px;
+    border-radius: 50%;
+    background-position-x: center ;
+    background-position-y:center ;
+    width: 60px;
+    user-select: none;
+    height: 60px;
+    font-size: 20px;
+    transition: transform 0.5s;
+    cursor: pointer;
+    position: absolute;
+    margin-left: -125px;
+    margin-top: -30px;
+    border:2px solid black;
+}
+#Triangle {
+    background-image: url(Triangle.webp);
+    background-color: white;
+    background-size: 55px;
+    border-radius: 50%;
+    background-position-x: center ;
+    background-position-y:center;
+    width: 60px;
+    user-select: none;
+    height: 60px;
+    font-size: 20px;
+    transition: transform 0.5s;
+    cursor: pointer;
+    position: absolute;
+    margin-left: -25px;
+    margin-top: -30px;
+    border:2px solid black;
+}
+#topic {
+    font-family: "Playwrite GB S";
+    font-size: 45px;
+    text-align: center; 
+    position: absolute;
+    top: -10px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    
+}
+#albert {
+    margin-left: 250px;
+    margin-top: -250px;
+    height: 350px;
+    width: auto;
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+
+
+}
+#albert2 {
+    margin-left: -600px;
+    margin-top: -225px;
+    height: 350px;
+    width: auto;
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+}
+#Geometry {
+    background-image: url(geometry.jpg);
+    background-color: white;
+    background-size: 110px;
+    border-radius: 50%;
+    background-position-x: 196px ;
+    background-position-y:center;
+    width: 60px;
+    user-select: none;
+    height: 60px;
+    font-size: 20px;
+    transition: transform 0.5s;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 75px;
+    margin-top: -30px;
+    border:2px solid black;
+}
+#kok {
+    background-image: url(kok3.png);
+    background-color: white;
+    background-size: 90px;
+    border-radius: 50%;
+    background-position-x: -20px;
+    background-position-y:center;
+    width: 60px;
+    user-select: none;
+    height: 60px;
+    font-size: 20px;
+    transition: transform 0.5s;
+    cursor: pointer;
+    position: absolute;
+    margin-left: -125px;
+    margin-top: 50px;
+    border:2px solid black;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+#kok:hover {
+    transform: scale(1.1);
+}
+#toplama:hover {
+    transform: scale(1.1);
+}
+#cixma:hover {
+    transform: scale(1.1);
+}
+#vurma:hover {
+    transform: scale(1.1);
+}
+#bolme:hover {
+    transform: scale(1.1);
+}
+#topcixbolvur:hover {
+    transform: scale(1.1);
+}
+#kesr:hover {
+    transform: scale(1.1);
+}
+#find:hover {
+    transform: scale(1.1);
+}
+#Geometry:hover {
+    transform: scale(1.1);
+}
+#Triangle:hover {
+    transform: scale(1.1);
+}
+#topic:hover {
+    animation: renkDegistir 2s infinite;
+}
+
+@keyframes renkDegistir {
+    0% { color: red; }
+    10% { color: green; }
+    20% { color: orange; }
+    30% { color: blue; }
+    40% { color: purple; }
+    50% { color:cyan; }
+    60% { color: brown; }
+    70% { color: yellow; }
+    80% { color: lightgreen; }
+    90% { color: darkgrey; }
+    100% { color: lightblue; }
+}
+#menu * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Tıklama etkisini kaldır */
+    outline: none; /* Odaklanınca mavi çerçeveyi kaldır */
+    box-shadow: none; /* Butona tıkladığında eklenen gölgeyi kaldır */
+  }
+#start * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Tıklama etkisini kaldır */
+    outline: none; /* Odaklanınca mavi çerçeveyi kaldır */
+    box-shadow: none; /* Butona tıkladığında eklenen gölgeyi kaldır */
+  }
